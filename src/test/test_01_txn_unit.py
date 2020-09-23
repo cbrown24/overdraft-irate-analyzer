@@ -20,12 +20,12 @@ class Test():
 
     @pytest.fixture
     def _bad_json_file(self) -> FileStorage:
-        filename = './fixtures/15731-ba.json'
+        filename = './test/fixtures/15731-ba.json'
         return filename
 
     @pytest.fixture
     def _good_json_file_1(self) -> FileStorage:
-        filename = './fixtures/15475-ba.json'
+        filename = './test/fixtures/15475-ba.json'
         return filename
 
     @pytest.fixture
