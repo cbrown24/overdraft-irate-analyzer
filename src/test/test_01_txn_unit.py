@@ -16,7 +16,8 @@ class Test():
             with _web_app.test_client() as c:
                 rv = c.post('/rates/file/',
                                  data=data)
-                return rv.data.decode('utf-8')
+                # return rv.data.decode('utf-8')
+                return rv.json
 
     @pytest.fixture
     def _bad_json_file(self) -> FileStorage:
@@ -38,8 +39,12 @@ class Test():
 
     def test_01_bad_json(self, _bad_json_file: str, _web_app: Flask) -> None:
         rv = self._post_file(_bad_json_file, _web_app)
-        assert '"status": "fail"' in rv
+        assert rv['status'] == "fail"
 
-    def test_01_good_json(self, _good_json_file_1: str, _web_app: Flask) -> None:
+    def test_02_good_json(self, _good_json_file_1: str, _web_app: Flask) -> None:
         rv = self._post_file(_good_json_file_1, _web_app)
-        assert '"status": "success"' in rv
+        assert rv['status'] == "success"
+
+    def test_02_sum(self, _good_json_file_1: str, _web_app: Flask) -> None:
+        rv = self._post_file(_good_json_file_1, _web_app)
+        assert rv['data'][0]['data'][0]['value'] == 0.009150716113899024
