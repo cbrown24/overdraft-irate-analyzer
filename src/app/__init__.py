@@ -3,7 +3,7 @@ from flask import Blueprint
 
 # from .api 
 
-from .main.controller.irate_controller import api as irate_ns
+from .main.controller.overdraft_controller import api as overdraft_ns
 
 blueprint = Blueprint('api', __name__)
 
@@ -13,4 +13,4 @@ api = Api(blueprint,
           description='a flask app with a restplus web service',
           )
 
-api.add_namespace(irate_ns, path='/overdraft')
+api.add_namespace(overdraft_ns, path='/overdraft')

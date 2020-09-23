@@ -4,7 +4,7 @@ class NullableString(fields.String):
     __schema_type__ = ['string', 'null']
     __schema_example__ = 'nullable string'
 
-class InterestRateDto:
+class OverdraftDto:
     api = Namespace('overdraft', description='Create Overdraft Report')
     txn_meta = api.model('txn_meta', {
         "amount":  fields.Float(required=False),
