@@ -20,7 +20,7 @@ Developed in Python 3.8.1
 ## Installing
  create a venv
 ```
-Christophers-MacBook-Pro:rabo christopherbrown$ python3 -m venv updraft:
+python3 -m venv updraft
 ```
 activate venv and clone https://github.com/cbrown24/updraft.git
 ```
