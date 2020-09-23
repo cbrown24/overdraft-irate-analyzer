@@ -1,5 +1,5 @@
 from typing import List, Any, Dict
-from ..model.txn_tools import Transaction, ODCharges
+from ..model import Transaction, ODCharges
 from werkzeug.datastructures import FileStorage
 import json
 
@@ -27,7 +27,7 @@ def create_od_summary(data: Data) -> ResponseEnvelope:
         resp_envelope['data'] = resp_body
         resp_envelope['status'] = 'success'
         resp_envelope['message'] = 'Summary complete'
-        return resp_envelope, 200 # not 201 as no records created
+        return resp_envelope, 200
     except Exception as e:
         response: ResponseEnvelope = {
                 'status': 'fail',

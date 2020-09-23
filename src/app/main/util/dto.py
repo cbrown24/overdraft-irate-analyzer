@@ -9,7 +9,7 @@ class InterestRateDto:
     irate_meta = api.model('irate_meta', {
         "amount":  fields.Float(required=False),
         "description": NullableString(required=False),
-        "timestamp": fields.DateTime(dt_format='iso8601'),
+        "timestamp": fields.DateTime(),
         "balance": fields.Float(required=False),
     })
     response_meta = api.model('response_meta', {

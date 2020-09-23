@@ -18,17 +18,6 @@ file_upload.add_argument('file',
                          required=True,
                          help='Json file')
 
-@api.route('/data/')
-class ParseJsonData(Resource):
-    @api.expect([irate_meta], validate=True)
-    @api.response(200, 'Calculation complete.')
-    @api.marshal_list_with(resp)
-    @api.doc('Perform a new calculation from post payload')
-    def post(self):
-        """Perform a new calculation from post payload"""
-        data = request.json
-        return create_od_summary(data=data)
-
 @api.route('/file/')
 class ParseJsonFile(Resource):
     @api.expect(file_upload)
@@ -40,3 +29,16 @@ class ParseJsonFile(Resource):
         args = file_upload.parse_args()
         file = args['file']
         return create_od_summary_from_file(file)
+
+
+@api.route('/data/')
+class ParseJsonData(Resource):
+    @api.expect([irate_meta], validate=True)
+    @api.response(200, 'Calculation complete.')
+    @api.marshal_list_with(resp)
+    @api.doc('Perform a new calculation from post payload')
+    def post(self):
+        """Perform a new calculation from post payload"""
+        data = request.json
+        return create_od_summary(data=data)
+
