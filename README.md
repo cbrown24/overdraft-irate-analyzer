@@ -20,7 +20,7 @@ Developed in Python 3.8.1
 ## Installing
  create a venv
 ```
-Christophers-MacBook-Pro:rabo christopherbrown$ python3 -m venv updraft:
+python3 -m venv updraft
 ```
 activate venv and clone https://github.com/cbrown24/updraft.git
 ```
@@ -141,7 +141,7 @@ test/test_01_txn_unit.py ..                                                     
 - I dont offer much experienve in Zappa or deploying to AWS/Azure. I have worked with Heroku's CLI tools to deploy aftifacts to Heroku containers. Zappa looks very attractive and would be keen to learn more.
 - Most of my experience is deploying via Jenkins CD job which pulls a frozen artifact from the firms defined artifact repository. In many cases this is Artifactory.
 
-# How would I automate in CI/CD environment ? 
+## How would I automate in CI/CD environment ? 
 - Use Jenkins or another CI tool (I started with Cruise Control for Ruby years ago), which will trigger a build if all the unit + functional tests complete succesfully. I would also incorproate pylint, code-smell and code coverage checks before the pytest run
 - We should have subsequent CI jobs which facilitate promotion to given environment once appropriate control gates are passed (e.g test on QA/UAT environment)
 - The CI release jobs which also facilitate composition of documentation/release notes
