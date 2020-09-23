@@ -76,6 +76,35 @@ e.g:
 
 ```
 
+## Demo
+curl generated from swagger ui
+```
+(updraft) ChristohersMBP2:fixtures christopherbrown$ pwd
+/Users/christopherbrown/Documents/test_updraft_solution/updraft/updraft/src/test/fixtures
+(updraft) ChristohersMBP2:fixtures christopherbrown$  curl -X POST "http://localhost:5000/overdraft/file/" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@15475-ba.json;type=application/json"
+{
+    "status": "success",
+    "message": "Summary complete",
+    "data": [
+        {
+            "name": "apr",
+            "data": [
+                {
+                    "date": "2020-08-31",
+                    "value": 0.009150716113899024
+                },
+                {
+                    "date": "2020-07-31",
+                    "value": 0.007255815085524479
+                },
+                {
+                    "date": "2020-06-30",
+                    "value": 0.004164296831268787
+                },
+                {
+                    "date": "2020-05-31",
+
+```
 
 ## Automated Testing
 ```
