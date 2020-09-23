@@ -13,4 +13,4 @@ api = Api(blueprint,
           description='a flask app with a restplus web service',
           )
 
-api.add_namespace(irate_ns, path='/rates')
+api.add_namespace(irate_ns, path='/overdraft')

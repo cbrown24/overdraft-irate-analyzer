@@ -5,8 +5,8 @@ class NullableString(fields.String):
     __schema_example__ = 'nullable string'
 
 class InterestRateDto:
-    api = Namespace('irate', description='Create Interest rate report')
-    irate_meta = api.model('irate_meta', {
+    api = Namespace('overdraft', description='Create Overdraft Report')
+    txn_meta = api.model('txn_meta', {
         "amount":  fields.Float(required=False),
         "description": NullableString(required=False),
         "timestamp": fields.DateTime(),

@@ -7,7 +7,7 @@ from ..service.irate_service import create_od_summary, create_od_summary_from_fi
 from ..util.dto import InterestRateDto
 
 api = InterestRateDto.api
-irate_meta = InterestRateDto.irate_meta
+txn_meta = InterestRateDto.txn_meta
 resp = InterestRateDto.response_envelope
 
 
@@ -33,7 +33,7 @@ class ParseJsonFile(Resource):
 
 @api.route('/data/')
 class ParseJsonData(Resource):
-    @api.expect([irate_meta], validate=True)
+    @api.expect([txn_meta], validate=True)
     @api.response(200, 'Calculation complete.')
     @api.marshal_list_with(resp)
     @api.doc('Perform a new calculation from post payload')

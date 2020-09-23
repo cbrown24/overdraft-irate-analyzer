@@ -14,7 +14,7 @@ class Test():
                 'file': (f, file_path)
             }
             with _web_app.test_client() as c:
-                rv = c.post('/rates/file/',
+                rv = c.post('/overdraft/file/',
                                  data=data)
                 # return rv.data.decode('utf-8')
                 return rv.json
