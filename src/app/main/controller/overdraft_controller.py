@@ -3,7 +3,7 @@ from flask import request, abort
 from flask_restplus import Resource
 from flask_restplus import reqparse
 
-from ..service.irate_service import create_od_summary, create_od_summary_from_file
+from ..service.od_service import create_od_summary, create_od_summary_from_file
 from ..util.dto import OverdraftDto
 
 api = OverdraftDto.api
