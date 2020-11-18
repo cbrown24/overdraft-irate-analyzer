@@ -16,7 +16,6 @@ class Test():
             with _web_app.test_client() as c:
                 rv = c.post('/overdraft/file/',
                                  data=data)
-                # return rv.data.decode('utf-8')
                 return rv.json
 
     @pytest.fixture
@@ -45,6 +44,3 @@ class Test():
         rv = self._post_file(_good_json_file_1, _web_app)
         assert rv['status'] == "success"
 
-    def test_02_sum(self, _good_json_file_1: str, _web_app: Flask) -> None:
-        rv = self._post_file(_good_json_file_1, _web_app)
-        assert rv['data'][0]['data'][0]['value'] == 0.009150716113899024
