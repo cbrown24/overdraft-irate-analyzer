@@ -3,7 +3,7 @@
 ## Assignment
 ```
 
-Build a microservice that has an API that can receive a list of transactions, and returns the following:
+A microservice that has an API that can receive a list of transactions, and returns the following:
 
     1.  The calendar month by calendar month overdraft fees on the account
     2.  The interest rate each calendar month shown as an annual percentage rate
